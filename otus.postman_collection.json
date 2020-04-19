@@ -139,7 +139,7 @@
 		{
 			"id": "52be274a-efe4-448a-9fcd-a85639e941cf",
 			"key": "baseUrl",
-			"value": "",
+			"value": "arch.homework/otusapp",
 			"type": "string"
 		}
 	],
