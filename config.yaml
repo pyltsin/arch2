@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crud
+data:
+  URI: jdbc:postgresql://postgres/myapp
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hello-secret
+type: Opaque
+data:
+  PASSWORD: cGFzc3dk
+  USER: bXl1c2Vy

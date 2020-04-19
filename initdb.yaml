@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "myapp"
+spec:
+  template:
+    metadata:
+      name: "myapp"
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: post-install-job
+          image: postgres:11
+          env:
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  key: USER
+                  name: hello-secret
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: PASSWORD
+                  name: hello-secret
+          command:
+            - sh
+            - "-c"
+            - |
+              psql postgres://myuser:passwd@postgres/myapp <<'EOF'
+              create table users
+              (
+              id          varchar not null
+              constraint user_pk
+              primary key,
+              first_name  varchar,
+              second_name varchar
+              );
+              EOF
+
+  backoffLimit: 0

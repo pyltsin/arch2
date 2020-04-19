@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f0fbfea7-d8a4-4812-a3f6-89c0dc233e85",
+		"name": "otus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aafa79d3-c708-48e7-9cf5-4514b7f82a12",
+						"exec": [
+							"var responseJSON = JSON.parse(responseBody)",
+							"pm.collectionVariables.set(\"userId\", responseJSON[\"id\"])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"test1\", \"secondName\": \"test2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user/{{userId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"test3\",\n    \"secondName\": \"test4\",\n    \"id\": \"{{userId}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user/{{userId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "237a530c-994c-4214-afd6-5bc9e0b5fb85",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b8db05ac-df6c-4b36-8bb0-4464ea5d18e9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "daf73219-2fc7-4d6b-9c62-800fa142ca2a",
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "52be274a-efe4-448a-9fcd-a85639e941cf",
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

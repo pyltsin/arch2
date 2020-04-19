@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="kustomization">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="kustomization" />
+              <option name="relativePathToSchema" value="http://json.schemastore.org/kustomization" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="postgres.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="config.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="initdb.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>
