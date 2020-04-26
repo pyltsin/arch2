@@ -27,6 +27,41 @@ data:
       "links": [],
       "panels": [
       {
+        "alert": {
+          "alertRuleTags": {},
+          "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                100
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+          ],
+          "executionErrorState": "alerting",
+          "for": "5m",
+          "frequency": "1m",
+          "handler": 1,
+          "name": "latency app alert",
+          "noDataState": "no_data",
+          "notifications": []
+        },
         "aliasColors": {},
         "bars": false,
         "dashLength": 10,
@@ -91,7 +126,15 @@ data:
           "refId": "D"
         }
         ],
-        "thresholds": [],
+        "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 100
+        }
+        ],
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
@@ -239,6 +282,41 @@ data:
         }
       },
       {
+        "alert": {
+          "alertRuleTags": {},
+          "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+          ],
+          "executionErrorState": "alerting",
+          "for": "5m",
+          "frequency": "1m",
+          "handler": 1,
+          "name": "Error Nginx alert",
+          "noDataState": "no_data",
+          "notifications": []
+        },
         "aliasColors": {},
         "bars": false,
         "dashLength": 10,
@@ -285,7 +363,15 @@ data:
           "refId": "A"
         }
         ],
-        "thresholds": [],
+        "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 1
+        }
+        ],
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
@@ -327,6 +413,41 @@ data:
         }
       },
       {
+        "alert": {
+          "alertRuleTags": {},
+          "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                10
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+          ],
+          "executionErrorState": "alerting",
+          "for": "5m",
+          "frequency": "1m",
+          "handler": 1,
+          "name": "Error  App alert",
+          "noDataState": "alerting",
+          "notifications": []
+        },
         "aliasColors": {},
         "bars": false,
         "dashLength": 10,
@@ -373,7 +494,15 @@ data:
           "refId": "A"
         }
         ],
-        "thresholds": [],
+        "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 10
+        }
+        ],
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
@@ -775,8 +904,8 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-5m",
-        "to": "now-1m"
+        "from": "now-6h",
+        "to": "now"
       },
       "timepicker": {
         "refresh_intervals": [
@@ -798,5 +927,5 @@ data:
       "variables": {
         "list": []
       },
-      "version": 13
+      "version": 15
     }
