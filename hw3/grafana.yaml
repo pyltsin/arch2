@@ -584,7 +584,7 @@ data:
         "steppedLine": false,
         "targets": [
         {
-          "expr": "sum by (status) (rate(nginx_ingress_controller_request_duration_seconds_bucket [2m]))",
+          "expr": "sum by (status) (rate(nginx_ingress_controller_request_duration_seconds_bucket{le=\"+Inf\"} [2m]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -904,7 +904,7 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-6h",
+        "from": "now-5m",
         "to": "now"
       },
       "timepicker": {
@@ -927,5 +927,5 @@ data:
       "variables": {
         "list": []
       },
-      "version": 15
+      "version": 16
     }
