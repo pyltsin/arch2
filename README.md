@@ -1,12 +1,11 @@
-Установка config
-` kubectl apply -f config.yaml`
-Postgres
-`kubectl apply -f postgres.yaml `
-Запуск job
-`kubectl apply -f initdb.yaml `
+Запуск prometheus
+helm install prom stable/prometheus-operator -f prometheus.yaml --atomic
 
-Запуск сервиса
-` kubectl apply -f deployment.yaml -f Service.yaml -f ingress.yaml`
+Запуск ingress
+helm install nginx stable/nginx-ingress -f nginx-ingress.yaml --atomic
 
-Настроить параметр baseUrl в postman коллекции:
-otus.postman_collection.json
+Запуск нагрузки
+kubectl apply -f  ad.yaml 
+
+Запуск приложения
+helm install myapp ./hello-chart --atomic

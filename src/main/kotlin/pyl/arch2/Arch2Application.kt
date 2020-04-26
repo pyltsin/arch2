@@ -20,9 +20,9 @@ class Arch2Application{
 
     @Bean
     fun datasource(): DataSource {
-        val uri = env.getProperty("DATABASE_URI")
-        val password = env.getProperty("POSTGRES_PASSWORD")
-        val user = env.getProperty("POSTGRES_USER")
+        val uri = env.getProperty("DATABASE_URI", "jdbc:postgresql://localhost:5432/myapp")
+        val password = env.getProperty("POSTGRES_PASSWORD", "passwd")
+        val user = env.getProperty("POSTGRES_USER", "myuser")
         println(uri)
         println(password)
         println(user)

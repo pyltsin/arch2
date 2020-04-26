@@ -7,11 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5433/mytestdb</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="myapp@192.168.99.100" uuid="9d5a669f-3979-4e01-b88b-14d1e805df0b">
+    <data-source source="LOCAL" name="myapp@localhost" uuid="9d5a669f-3979-4e01-b88b-14d1e805df0b">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.99.100:32175/myapp</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/myapp</jdbc-url>
     </data-source>
   </component>
 </project>

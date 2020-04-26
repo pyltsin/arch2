@@ -20,6 +20,11 @@ class Controller {
         return userRepo.findById(id).orElseThrow { IllegalArgumentException() }
     }
 
+    @GetMapping
+    fun findAll(): MutableIterable<User> {
+        return userRepo.findAll()
+    }
+
     @DeleteMapping("/{id}")
     fun delete(@PathVariable(value = "id") id: String) {
         return userRepo.deleteById(id)

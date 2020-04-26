@@ -11,5 +11,10 @@ class ControllerHealth {
         return Response("OK")
     }
 
+    @GetMapping("/health2")
+    fun healthCheck2(): Response {
+        return Response("OK")
+    }
+
     data class Response(val status:String)
 }

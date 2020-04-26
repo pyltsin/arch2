@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "myapp-test2"
+spec:
+  template:
+    metadata:
+      name: "myapp-test2"
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: test
+          image: pyltsin/test-test:10.0
+  backoffLimit: 0
